@@ -13,26 +13,26 @@ requests, and checking for a logged-in user.
 
 Note: no security considerations whatsoever went into the making of
 this plugin.  It might be a terrible idea.  Trac core dev Remy Blank
-said:
+said::
 
-> Genshi templates allow executing arbitrary Python code. So you basically
-> give users who can insert the macro anywhere (wiki page, ticket comment,
-> etc) permission to act as the user running Trac, including running run
-> any shell command.
->
-{{{#!Genshi
-<div>${open('/etc/apache2/htpasswd').read()}</div>
-}}}
-
-{{{#!Genshi
-<?python
-  import os
-  os.system("rm /path/to/env/db/trac.db")
-?>
-}}}
->
-> So my advice is, only enable this macro on sites where you trust *all*
-> users who can edit *any* wiki text with the web server's account.
+  > Genshi templates allow executing arbitrary Python code. So you basically
+  > give users who can insert the macro anywhere (wiki page, ticket comment,
+  > etc) permission to act as the user running Trac, including running run
+  > any shell command.
+  >
+  {{{#!Genshi
+  <div>${open('/etc/apache2/htpasswd').read()}</div>
+  }}}
+  
+  {{{#!Genshi
+  <?python
+    import os
+    os.system("rm /path/to/env/db/trac.db")
+  ?>
+  }}}
+  >
+  > So my advice is, only enable this macro on sites where you trust *all*
+  > users who can edit *any* wiki text with the web server's account.
 
 Configuration and Usage
 -----------------------
