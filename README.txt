@@ -5,7 +5,9 @@ Description
 -----------
 
 The GenshiMacro allows you to write and render Genshi templates directly
-in wiki pages with a new ``Genshi`` processor.
+in wiki pages with a new ``Genshi`` processor.  This can be useful for 
+prototyping new plugin ideas inline in wiki pages, and then converting them
+to formal plugins later.
 
 Your templates will have access to the request as ``req``, which can be
 useful for tasks like URL generation, rendering form tokens for POST
